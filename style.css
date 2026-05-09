@@ -33,6 +33,11 @@ body {
     align-items: center;
     z-index: 10000;
     transition: opacity 0.8s ease;
+    pointer-events: none; /* أضيفي هذا السطر لضمان عدم حجب اللمس */
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+#splash[style*="display: none"] {
+    visibility: hidden;
 }
 
 /* تصميم القلب الكبير */
