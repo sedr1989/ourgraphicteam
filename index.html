@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> العطااالله | مصممة غرافيك</title>
+  
+  <!-- الخطوط والمكتبات الخارجية -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- ملف CSS الخارجي -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ضفتو جديد-->
+ <div id="splash">
+    <div class="heart-container">
+        <div class="big-pixel-heart"></div>
+    </div>
+    <p class="splash-text">Welcome</p>
+</div>
+
+
+
+  <header>
+    <a href="#" class="logo-area">
+      <div class="logo-placeholder"><img src="images/logo.jpg" alt="شعار"></div>
+      <div class="logo-name"> العطاالله</div>
+    </a>
+    <div class="menu-icon"id="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="nav-menu">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">نبذة عنا</a>
+      <a href="#works" class="active"> أعمالنا </a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="waving-grid-container"><div class="waving-grid"></div></div>
+    <div class="hero-content">
+      <h1>العطاالله</h1>
+      <p id="typing-text"></p>
+    </div>
+  </section>
+  <!-- ====قسم نبذة عني -ا ===== -->
+<section id="about" class="about-section reveal">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>نبذة عنا</h2>
+      <p>نحن فريق مكون من مصممين غرافيك متخصصيين في تحويل الأفكار إلى هويات بصرية ملموسة. نؤمن أن كل علامة تجارية لها قصة تستحق أن تُروى بتصميم فريد وجذاب.</p>
+      <p>عملنا مع العديد من الشركات والأفراد لتقديم تصاميم تعكس شخصيتهم وتحقق أهدافهم. نهجنا يعتمد على الإبداع، الدقة، والفهم العميق لاحتياجات العميل.</p>
+      <p>نستخدم أحدث الأدوات كالذكاء الصنعي لإضفاء لمسة فنية واحترافية على كل مشروع، سواء كان شعاراً، هوية بصرية متكاملة، أو تصاميم للسوشيال ميديا. شغفنا هو خلق تجارب بصرية تترك أثراً.</p>
+      <a href="#works" class="about-btn"> اطلع على أعمالنا </a>
+    </div>
+    <!--///////////-->
+    <div class="about-image">
+       <div class="blob-wrapper magnetic-float">
+    <div class="blob-frame">
+      <img src="images/about-me.jpg" alt="شهد العطالله">
+        <!-- أيقونات خفيفة جداً (اختياري) -->
+    <div class="decor-icon icon-top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+    </div>
+  </div>
+</div>
+     <!--
+    هووووون علقت
+    <div class="about-image">
+      <img src="images/about-me.jpg" alt="شهد العطالله">
+    </div>
+  </div>-->
+</section>
+
+
+  <section id="works" class="works-section">
+
+
+    <h2 class="main-works-title reveal"> معرض أعمالنا</h2>
+    
+    <div class="works-tabs">
+      <a href="#print-works" class="tab-link">المطبوعات</a>
+      <a href="#identity-works" class="tab-link">الهوية البصرية</a>
+      <a href="#logos-works" class="tab-link">الشعارات</a>
+      <a href="#social-works" class="tab-link">السوشيال ميديا</a>
+    </div>
+
+    <div class="zigzag-grid">
+
+
+      <!--  كود اصلي المطبوعات -->
+      <div class="work-item reveal" id="print-works">
+        <div class="gallery-wrapper">
+          <button class="nav-btn prev" onclick="move('print', 1)">❯</button>
+          <div class="gallery-container" id="print-scroll" onscroll="updateCount('print')">
+            <div class="work-img-container"><img src="images/printe/pimg1.jpg" alt="عمل مطبوع 1"></div>
+            <div class="work-img-container"><img src="images/printe/pimg2.jpg" alt="عمل مطبوع 2"></div>
+            <div class="work-img-container"><img src="images/printe/pimg3.jpg" alt="عمل مطبوع 3"></div>
+             <div class="work-img-container"><img src="images/printe/pimg4.jpg" alt="عمل مطبوع 1"></div>
+            <div class="work-img-container"><img src="images/printe/pimg5.jpg" alt="عمل مطبوع 2"></div>
+            <div class="work-img-container"><img src="images/printe/pimg6.jpg" alt="عمل مطبوع 3"></div>
+            <div class="work-img-container"><img src="images/printe/pimg7.jpg" alt="عمل مطبوع 3"></div>
+            <div class="work-img-container"><img src="images/printe/pimg8.jpg" alt="عمل مطبوع 3"></div>
+            <div class="work-img-container"><img src="images/printe/pimg9.jpg" alt="عمل مطبوع 3"></div>
+          </div>
+          <button class="nav-btn next" onclick="move('print', -1)">❮</button>
+          <div class="counter" id="print-idx">1 / 3</div>
+        </div>
+        <h3 class="category-title">المطبوعات</h3>
+      </div>
+  
+
+      <!-- الهوية البصرية -->
+      <div class="work-item reverse reveal" id="identity-works">
+        <div class="gallery-wrapper">
+          <button class="nav-btn prev" onclick="move('identity', 1)">❯</button>
+          <div class="gallery-container" id="identity-scroll" onscroll="updateCount('identity')">
+            <div class="work-img-container"><img src="images/hoea/himg1.jpg" alt="هوية بصرية 1"></div>
+            <div class="work-img-container"><img src="images/hoea/himg2.jpg" alt="هوية بصرية 2"></div>
+            <div class="work-img-container"><img src="images/hoea/himg3.jpg" alt="هوية بصرية 3"></div>
+            <div class="work-img-container"><img src="images/hoea/himg4.jpg" alt="هوية بصرية 1"></div>
+            <div class="work-img-container"><img src="images/hoea/himg5.jpg" alt="هوية بصرية 2"></div>
+            <div class="work-img-container"><img src="images/hoea/himg6.jpg" alt="هوية بصرية 3"></div>
+            <div class="work-img-container"><img src="images/hoea/himg7.jpg" alt="هوية بصرية 3"></div>
+            <div class="work-img-container"><img src="images/hoea/himg8.jpg" alt="هوية بصرية 3"></div>
+            <div class="work-img-container"><img src="images/hoea/himg9.jpg" alt="هوية بصرية 3"></div>
+          </div>
+          <button class="nav-btn next" onclick="move('identity', -1)">❮</button>
+          <div class="counter" id="identity-idx">1 / 3</div>
+        </div>
+        <h3 class="category-title">الهوية البصرية</h3>
+      </div>
+
+      <!-- الشعارات -->
+      <div class="work-item reveal" id="logos-works">
+        <div class="gallery-wrapper">
+          <button class="nav-btn prev" onclick="move('logos', 1)">❯</button>
+          <div class="gallery-container" id="logos-scroll" onscroll="updateCount('logos')">
+            <div class="work-img-container"><img src="images/logo/logo1.jpg" alt="شعار 1"></div>
+            <div class="work-img-container"><img src="images/logo/logo2.jpg" alt="شعار 2"></div>
+            <div class="work-img-container"><img src="images/logo/logo3.jpg" alt="شعار 3"></div>
+            <div class="work-img-container"><img src="images/logo/logo4.jpg" alt="شعار 1"></div>
+            <div class="work-img-container"><img src="images/logo/logo5.jpg" alt="شعار 2"></div>
+            <div class="work-img-container"><img src="images/logo/logo6.jpg" alt="شعار 3"></div>
+             <div class="work-img-container"><img src="images/logo/logo7.jpg" alt="شعار 1"></div>
+            <div class="work-img-container"><img src="images/logo/logo8.jpg" alt="شعار 2"></div>
+            <div class="work-img-container"><img src="images/logo/logo9.jpg" alt="شعار 3"></div>
+            
+            
+          </div>
+          <button class="nav-btn next" onclick="move('logos', -1)">❮</button>
+          <div class="counter" id="logos-idx">1 / 3</div>
+        </div>
+        <h3 class="category-title">الشعارات</h3>
+      </div>
+           <!-- السوشيال ميديا -->
+      <div class="work-item reverse reveal" id="social-works">
+        <div class="gallery-wrapper">
+          <button class="nav-btn prev" onclick="move('social', 1)">❯</button>
+          <div class="gallery-container" id="social-scroll" onscroll="updateCount('social')">
+            <div class="work-img-container"><img src="images/social/simg1.jpg" alt="سوشيال ميديا 1"></div>
+            <div class="work-img-container"><img src="images/social/simg2.jpg" alt="سوشيال ميديا 2"></div>
+            <div class="work-img-container"><img src="images/social/simg3.jpg" alt="سوشيال ميديا 3"></div>
+            <div class="work-img-container"><img src="images/social/simg4.jpg" alt="سوشيال ميديا 1"></div>
+            <div class="work-img-container"><img src="images/social/simg5.jpg" alt="سوشيال ميديا 2"></div>
+            <div class="work-img-container"><img src="images/social/simg6.jpg" alt="سوشيال ميديا 3"></div>
+            <div class="work-img-container"><img src="images/social/simg7.jpg" alt="سوشيال ميديا 1"></div>
+            <div class="work-img-container"><img src="images/social/simg8.jpg" alt="سوشيال ميديا 2"></div>
+            <div class="work-img-container"><img src="images/social/simg9.jpg" alt="سوشيال ميديا 3"></div>
+            
+          </div>
+          <button class="nav-btn next" onclick="move('social', -1)">❮</button>
+          <div class="counter" id="social-idx">1 / 3</div>
+        </div>
+        <h3 class="category-title">السوشيال ميديا</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="services " class="section reveal">
+    <h2 style="text-align: center; font-size: 2.8rem;">خدماتنا</h2>
+    <div class="services-grid">
+      <div class="service-card"><i class="fas fa-magic"></i><h3>تصميم شعارات</h3></div>
+      <div class="service-card"><i class="fas fa-palette"></i><h3>هوية بصرية</h3></div>
+      <div class="service-card"><i class="fas fa-bullhorn"></i><h3>تصميم سوشيال ميديا</h3></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section reveal">
+    <h2>هل لديك مشروع؟ دعنا نتحدث</h2>
+    <div class="contact-links">
+      <a href="https://wa.me/963992633972" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+      <a href="mailto:shhdtallh203@gmail.com"><i class="far fa-envelope"></i> بريد إلكتروني</a>
+    </div>
+  </section>
+
+  <!-- ملف الجافا سكريبت الخارجي -->
+  <script src="script.js"></script>
+</body>
+</html>

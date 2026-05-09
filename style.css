@@ -1,0 +1,713 @@
+ /* 1. التنسيقات العامة والألوان */
+:root {
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --bg-dark: #05010e;
+  --text-dark: #000;
+  --text-gray: #4b5563;
+  --transition: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #fff;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+/*ضفتو جديد*/
+/* تنسيق الشاشة الكاملة */
+#splash {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0a0612; /* الخلفية الغامقة التي تفضلينها */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease;
+}
+
+/* تصميم القلب الكبير */
+.big-pixel-heart {
+    position: relative;
+    width: 100px; /* حجم القلب */
+    height: 90px;
+    animation: heartBeat 1.2s infinite;
+}
+
+.big-pixel-heart:before,
+.big-pixel-heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #a855f7; /* لونك البنفسجي */
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); /* توهج بنفسجي */
+}
+
+.big-pixel-heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.splash-text {
+    color: white;
+    margin-top: 40px;
+    font-size: 2rem;
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* حركة النبض للقلب الكبير */
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+/*ضفتو جدسد*/
+
+html {
+  scroll-behavior: smooth;
+}
+/* قسم نبذة عني */
+.about-section {
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #fff 0%, #f5f0ff 100%);
+  direction: rtl;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-text h2:after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  border-radius: 5px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  border: 5px solid var(--primary);
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-text h2 { font-size: 2rem; }
+  .about-text p { font-size: 1rem; }
+}
+
+/* 2. قسم الهيدر */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-placeholder {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #eee;
+  border: 2px solid #eee;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-name {
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 2px solid var(--primary);
+  width: 85px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--primary);
+  color: var(--text-dark);
+}
+
+/* 3. قسم الرئيسية (الشبكة البطيئة والموجية) */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #000, #0a0118);
+  color: #fff;
+}
+
+.waving-grid-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.waving-grid {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background-image: linear-gradient(var(--primary) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--primary) 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+  transform: rotateX(65deg) translateZ(-100px);
+  opacity: 0.3;
+  animation: waveMoveForward 18s linear infinite, waveRipple 10s ease-in-out infinite;
+}
+
+@keyframes waveMoveForward {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
+}
+
+@keyframes waveRipple {
+  0%,
+  100% {
+    transform: rotateX(65deg) translateZ(-100px);
+  }
+  50% {
+    transform: rotateX(62deg) translateZ(-90px);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+}
+
+#typing-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  min-height: 40px;
+}
+
+#typing-text::after {
+  content: '|';
+  animation: blinkCursor 1s infinite;
+  margin-right: 3px;
+  color: var(--primary);
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* الأقسام العامة */
+.section {
+  padding: 100px 10%;
+}
+
+/* 4. قسم أعمالي 
+.works-section {
+  padding: 80px 5%;
+  background: #fafafa;
+}*/
+/* ===== شبكة بنفسجية فاتحة لقسم أعمالي ===== */
+.works-section {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    position: relative;
+}
+
+.works-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#a855f7 1px, transparent 1px),
+                      linear-gradient(90deg, #a855f7 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.main-works-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+.works-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  padding: 10px 25px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.tab-link:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+ .category-title {
+  margin: 30px 0 15px;
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.zigzag-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.work-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.gallery-wrapper {
+  flex: 1;
+  position: relative;
+  max-width: 600px;
+}
+
+.gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border: 6px solid var(--primary);
+  border-radius: 25px;
+  background: url('images/works-bg.jpg') no-repeat center center/cover;
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.08);
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.work-img-container {
+  min-width: 100%;
+  aspect-ratio: 1/1;
+  scroll-snap-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.prev {
+  right: -21px;
+}
+
+.next {
+  left: -21px;
+}
+
+.counter {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* 5. قسم الخدمات */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.service-card {
+  padding: 40px;
+  border: 2px solid #eee;
+  border-radius: 25px;
+  transition: 0.4s;
+  background: #fff;
+  text-align: center;
+}
+
+.service-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-10px);
+}
+
+.service-card i {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* 6. قسم التواصل */
+.contact-section {
+  padding: 80px 10%;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  border-radius: 60px 60px 0 0;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #fff;
+  padding: 12px 30px;
+  border-radius: 35px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .work-item,
+  .work-item.reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+//////////////////////////////////////////////
+/* الحلقة المتحركة المحيطة */
+.rotating-border {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border-radius: 30% 70% 70% 30% / 30% 35% 65% 70%;
+  background: conic-gradient(from var(--angle), #a855f7, #7e22ce, #6f0ed7, #a855f7);
+  z-index: 0;
+  animation: spin 3s linear infinite;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+//////////////////////////////////////////////////////////////
+.blob-wrapper {
+    position: relative;
+    width: 300px;
+    height: 380px; /* جعلته طويلاً قليلاً ليشبه الشكل في الصورة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob-frame {
+    width: 100%;
+    height: 100%;
+    /* هذا السطر هو الذي يصنع الشكل الذي بجهة اليسار بالضبط */
+    border-radius: 40% 60% 40% 60% / 70% 30% 70% 30%;
+    
+    /* التدرج اللوني من البنفسجي للزهري كما في الصورة */
+    background: linear-gradient(135deg, #7b2ff7 0%, #f107a3 100%);
+    
+    padding: 10px; /* الإطار */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    /* أنيميشن التموج السائل */
+    animation: liquid-blob 8s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(123, 47, 247, 0.3);
+}
+
+.blob-frame img {
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    /* جعل الصورة تأخذ نفس شكل الإطار المائل */
+    border-radius: inherit; 
+}
+
+/* حركة التموج الهادئة التي تغير شكل الزوايا ببطء */
+@keyframes liquid-blob {
+    0%, 100% {
+        border-radius: 40% 60% 40% 60% / 70% 30% 70% 30%;
+        transform: rotate(0deg) scale(1);
+    }
+    33% {
+        border-radius: 60% 40% 60% 40% / 30% 70% 30% 70%;
+        transform: rotate(2deg) scale(1.02);
+    }
+    66% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        transform: rotate(-1deg) scale(0.98);
+    }
+}
+
+/* تأثير التعويم (الارتفاع والانخفاض ببطء) */
+.magnetic-float {
+    animation: floating-alt 5s ease-in-out infinite;
+}
+
+@keyframes floating-alt {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.decor-icon {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    opacity: 0.6;
+}
+/*اضافة تاثير التمرير عند السحب */
+ /* تجهيز العناصر للاختفاء قبل السحب */
+.reveal {
+  position: relative;
+  transform: translateY(80px); /* مسافة السحب للأعلى */
+  opacity: 0;
+  transition: 1.2s all ease; /* مدة الحركة (ثانية وجزئين) */
+}
+
+/* الحالة عندما يظهر العنصر */
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+/*كود مشان تقسيم شاشة للمبايل*/
+/* إخفاء أيقونة المنيو في الكمبيوتر */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--primary-purple, #a855f7);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* إظهار الأيقونة في الموبايل */
+  }
+
+  header nav {
+    position: fixed;
+    top: 70px; /* تحت الهيدر مباشرة */
+    right: -100%; /* مخفية خارج الشاشة جهة اليمين */
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 25px;
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  /* عندما نضغط على الزر، تظهر القائمة */
+  header nav.active {
+    right: 0;
+  }
+
+  header nav a {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
