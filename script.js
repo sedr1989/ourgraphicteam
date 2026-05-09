@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
   });
 });
 /*ضفتو جديد*/
-window.addEventListener('load', () => {
+/*window.addEventListener('load', () => {
     setTimeout(() => {
         const splash = document.getElementById('splash');
         if(splash) {
@@ -64,7 +64,27 @@ window.addEventListener('load', () => {
             }, 800);
         }
     }, 1000); // سيبقى ظاهراً لمدة ثانيتين ونصف
-});
+});*/
+/*تعديل عليه مشان اذا علق القلب يختفي */
+function hideSplash() {
+    const splash = document.getElementById('splash');
+    if (splash) {
+        splash.style.opacity = '0';
+        setTimeout(() => {
+            splash.style.display = 'none';
+            // تشغيل تأثير الكتابة وظهور الأقسام بعد اختفاء القلب
+            if (typeof typeEffect === "function") typeEffect(); 
+            if (typeof revealOnScroll === "function") revealOnScroll();
+        }, 800);
+    }
+}
+
+// الطريقة الأولى: عند اكتمال تحميل الصفحة
+window.addEventListener('load', hideSplash);
+
+// الطريقة الثانية: مؤقت احتياطي (بعد 4 ثوانٍ يختفي مهما حدث)
+setTimeout(hideSplash, 2000);
+
 /* اضافة تاثير تمرير عند السحب */
 // وظيفة مراقبة التمرير لتفعيل كلاس active
 function revealOnScroll() {
